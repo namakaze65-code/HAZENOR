@@ -39,10 +39,9 @@ foreach ([
     }
 }
 
-// 2. Normalize REQUEST_URI on Vercel so /api routes match Laravel routing
-if (! empty($_SERVER['REQUEST_URI']) && ! str_starts_with($_SERVER['REQUEST_URI'], '/api')) {
-    $_SERVER['REQUEST_URI'] = '/api' . $_SERVER['REQUEST_URI'];
-}
+// 2. Normalize SCRIPT_NAME on Vercel serverless so Laravel/Symfony calculates baseUrl correctly
+$_SERVER['SCRIPT_NAME'] = '/index.php';
+$_SERVER['PHP_SELF'] = '/index.php';
 
 // 3. Exception fallback to surface exact error details
 try {

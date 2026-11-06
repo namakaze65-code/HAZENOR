@@ -22,7 +22,7 @@ use App\Modules\Unit\Controllers\UnitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('v1')->group(function () {
+$registerApiRoutes = function () {
     // Public Auth, Password Reset & Invitation Endpoints (Section 8.1)
     Route::post('/auth/register', [AuthController::class, 'register']);
     Route::post('/auth/login', [AuthController::class, 'login']);
@@ -166,4 +166,7 @@ Route::prefix('v1')->group(function () {
             }); // end EnsureStaffRole
         });
     });
-});
+};
+
+Route::prefix('v1')->group($registerApiRoutes);
+Route::prefix('api/v1')->group($registerApiRoutes);
