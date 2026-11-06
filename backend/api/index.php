@@ -39,7 +39,12 @@ foreach ([
     }
 }
 
-// 2. Exception fallback to surface exact error details
+// 2. Normalize REQUEST_URI on Vercel so /api routes match Laravel routing
+if (! empty($_SERVER['REQUEST_URI']) && ! str_starts_with($_SERVER['REQUEST_URI'], '/api')) {
+    $_SERVER['REQUEST_URI'] = '/api' . $_SERVER['REQUEST_URI'];
+}
+
+// 3. Exception fallback to surface exact error details
 try {
     require __DIR__ . '/../public/index.php';
 } catch (\Throwable $e) {
