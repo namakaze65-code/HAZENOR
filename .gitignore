@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Next.js
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.env*.local
+frontend/next-env.d.ts
+
+# Laravel
+backend/vendor/
+backend/node_modules/
+backend/public/hot
+backend/public/storage
+backend/storage/*.key
+backend/.env
+backend/.env.backup
+backend/.env.production
+backend/.phpunit.result.cache
+
+# Local tooling & OS
+composer.phar
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

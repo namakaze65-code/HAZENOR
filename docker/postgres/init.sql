@@ -1,0 +1,17 @@
+-- Initialize extensions required by RUKO360
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+CREATE EXTENSION IF NOT EXISTS "btree_gist";
+
+-- Create non-superuser application role that MUST respect Row Level Security (NOBYPASSRLS)
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT FROM pg_catalog.pg_roles WHERE rolname = 'ruko360_app') THEN
+        CREATE ROLE ruko360_app WITH LOGIN PASSWORD 'secret_app_password' NOSUPERUSER NOCREATEDB NOCREATEROLE NOBYPASSRLS;
+    END IF;
+END
+$$;
+
+GRANT CONNECT ON DATABASE ruko360 TO ruko360_app;
+GRANT USAGE ON SCHEMA public TO ruko360_app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO ruko360_app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT USAGE, SELECT ON SEQUENCES TO ruko360_app;

@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --hazenor-navy: #172B38;
+  --hazenor-gold: #C9B58E;
+  --hazenor-ivory: #EAE5DB;
+  --hazenor-ivory-light: #F6F4EF;
+  --hazenor-graphite: #303437;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  background-color: #F6F4EF;
+  color: #303437;
+  overflow-x: hidden;
+  max-width: 100vw;
+  @apply font-sans antialiased selection:bg-[#172B38] selection:text-[#EAE5DB];
+}
+
+.font-editorial {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+@keyframes rukoFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rukoPulseGlow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes rukoFloatSlow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-fade-up {
+  animation: rukoFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-pulse-glow {
+  animation: rukoPulseGlow 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: rukoFloatSlow 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade-up,
+  .animate-pulse-glow,
+  .animate-float-slow {
+    animation: none !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class AuditLog extends Model
+{
+    public $timestamps = false;
+
+    protected $fillable = [
+        'organization_id',
+        'actor_user_id',
+        'action',
+        'entity_type',
+        'entity_id',
+        'old_values',
+        'new_values',
+        'ip_address',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'old_values' => 'array',
+            'new_values' => 'array',
+        ];
+    }
+}
