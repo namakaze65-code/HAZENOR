@@ -1,5 +1,21 @@
 <?php
 
+// Enable full error reporting to diagnose startup issues
+ini_set('display_errors', '1');
+error_reporting(E_ALL);
+
+// Check if composer vendor directory exists
+if (! file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    http_response_code(500);
+    header('Content-Type: application/json');
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Composer vendor/autoload.php tidak ditemukan pada runtime Vercel.',
+        'base_path' => realpath(__DIR__ . '/..'),
+    ]);
+    exit;
+}
+
 // 1. Prepare writable /tmp storage for Vercel Serverless
 $storagePath = '/tmp/storage';
 $_ENV['LARAVEL_STORAGE_PATH'] = $storagePath;
