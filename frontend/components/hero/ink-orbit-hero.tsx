@@ -145,18 +145,18 @@ export function InkOrbitHero({ isDark }: InkOrbitHeroProps) {
           {/* Left Column: HAZENOR Properties Headline, Description & CTAs */}
           <div className="lg:col-span-6 space-y-6">
             <div
-              className={`inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-medium border ${
+              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border max-w-full overflow-hidden ${
                 isDark
                   ? "bg-[#172B38] text-[#EAE5DB] border-[#C9B58E]/40"
                   : "bg-[#EAE5DB]/80 text-[#172B38] border-[#C9B58E]/60"
               }`}
             >
-              <HazenorSymbol theme={isDark ? "dark" : "light"} className="h-4 w-4" />
-              <span className="font-semibold tracking-wider uppercase text-[11px]">
+              <HazenorSymbol theme={isDark ? "dark" : "light"} className="h-4 w-4 shrink-0" />
+              <span className="font-semibold tracking-wider uppercase text-[10px] sm:text-[11px] truncate">
                 HAZENOR Properties
               </span>
-              <span className="text-[#C9B58E]">&bull;</span>
-              <span className="font-serif italic text-xs text-[#A89268] dark:text-[#C9B58E]">
+              <span className="text-[#C9B58E] shrink-0">&bull;</span>
+              <span className="font-serif italic text-[11px] sm:text-xs text-[#A89268] dark:text-[#C9B58E] truncate">
                 A Legacy Built on Trust.
               </span>
             </div>
@@ -171,7 +171,7 @@ export function InkOrbitHero({ isDark }: InkOrbitHeroProps) {
               </p>
               <h1
                 id="hero-heading"
-                className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.15] ${
+                className={`font-serif text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.18] sm:leading-[1.15] ${
                   isDark ? "text-[#EAE5DB]" : "text-[#172B38]"
                 }`}
               >
@@ -197,7 +197,7 @@ export function InkOrbitHero({ isDark }: InkOrbitHeroProps) {
               pembayaran, dan keluhan dalam satu sistem yang transparan dan terpercaya.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3.5 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <Link
                 href="/register"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#172B38] hover:bg-[#213B4D] text-[#EAE5DB] border border-[#C9B58E]/40 text-sm font-semibold shadow-sm transition focus:outline-none focus:ring-2 focus:ring-[#C9B58E]"
@@ -270,127 +270,127 @@ export function InkOrbitHero({ isDark }: InkOrbitHeroProps) {
                 </span>
               </div>
 
-              <div className="p-5 space-y-5">
+              <div className="p-3.5 sm:p-5 space-y-4 sm:space-y-5">
                 {/* Summary KPI Row */}
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3">
                   <div
-                    className={`rounded-xl border p-3.5 ${
+                    className={`rounded-xl border p-2 sm:p-3.5 ${
                       isDark
                         ? "bg-[#0F1E28]/70 border-[#C9B58E]/20"
                         : "bg-[#F6F4EF] border-[#EAE5DB]"
                     }`}
                   >
-                    <div className="flex items-center gap-1.5 text-xs opacity-75">
-                      <Building2 className="h-3.5 w-3.5 text-[#C9B58E]" aria-hidden="true" />
-                      <span>Total Properti</span>
+                    <div className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs opacity-75">
+                      <Building2 className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#C9B58E] shrink-0" aria-hidden="true" />
+                      <span className="truncate">Total Unit</span>
                     </div>
-                    <div className="mt-1 font-serif text-xl font-bold">Siap Kelola</div>
-                    <div className="text-[11px] opacity-70">Tangerang, Indonesia</div>
+                    <div className="mt-1 font-serif text-sm sm:text-xl font-bold truncate">Siap Kelola</div>
+                    <div className="text-[10px] sm:text-[11px] opacity-70 truncate">Tangerang</div>
                   </div>
 
                   <div
-                    className={`rounded-xl border p-3.5 ${
+                    className={`rounded-xl border p-2 sm:p-3.5 ${
                       isDark
                         ? "bg-[#0F1E28]/70 border-[#C9B58E]/20"
                         : "bg-[#F6F4EF] border-[#EAE5DB]"
                     }`}
                   >
-                    <div className="flex items-center gap-1.5 text-xs opacity-75">
-                      <Home className="h-3.5 w-3.5 text-[#C9B58E]" aria-hidden="true" />
-                      <span>Tingkat Hunian</span>
+                    <div className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs opacity-75">
+                      <Home className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#C9B58E] shrink-0" aria-hidden="true" />
+                      <span className="truncate">Hunian</span>
                     </div>
-                    <div className="mt-1 font-serif text-xl font-bold">Real-Time</div>
-                    <div className="text-[11px] text-emerald-700 dark:text-emerald-300 font-medium">
-                      Pantau Status Unit
+                    <div className="mt-1 font-serif text-sm sm:text-xl font-bold truncate">Real-Time</div>
+                    <div className="text-[10px] sm:text-[11px] text-emerald-700 dark:text-emerald-300 font-medium truncate">
+                      Status Unit
                     </div>
                   </div>
 
                   <div
-                    className={`rounded-xl border p-3.5 ${
+                    className={`rounded-xl border p-2 sm:p-3.5 overflow-hidden ${
                       isDark
                         ? "bg-[#0F1E28]/70 border-[#C9B58E]/20"
                         : "bg-[#F6F4EF] border-[#EAE5DB]"
                     }`}
                   >
-                    <div className="flex items-center gap-1.5 text-xs opacity-75">
-                      <FileText className="h-3.5 w-3.5 text-[#C9B58E]" aria-hidden="true" />
-                      <span>Tagihan Aktif</span>
+                    <div className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs opacity-75">
+                      <FileText className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#C9B58E] shrink-0" aria-hidden="true" />
+                      <span className="truncate">Tagihan</span>
                     </div>
-                    <div className="mt-1 font-serif text-xl font-bold">Otomatis</div>
-                    <div className="text-[11px] text-amber-700 dark:text-[#C9B58E] font-medium">
-                      Invoice &amp; Pengingat WA
+                    <div className="mt-1 font-serif text-sm sm:text-xl font-bold truncate">Otomatis</div>
+                    <div className="text-[10px] sm:text-[11px] text-amber-700 dark:text-[#C9B58E] font-medium truncate">
+                      Invoice &amp; WA
                     </div>
                   </div>
                 </div>
 
                 {/* Revenue Overview Box */}
                 <div
-                  className={`rounded-xl border p-4 flex items-center justify-between ${
+                  className={`rounded-xl border p-3.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
                     isDark
                       ? "bg-[#0F1E28] border-[#C9B58E]/30"
                       : "bg-[#172B38] text-[#EAE5DB] border-[#172B38]"
                   }`}
                 >
-                  <div>
-                    <div className="flex items-center gap-1.5 text-xs font-medium text-[#C9B58E]">
-                      <Wallet className="h-3.5 w-3.5" aria-hidden="true" />
-                      <span>Sistem Manajemen Aset &amp; Tagihan Sewa</span>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-1.5 text-[11px] sm:text-xs font-medium text-[#C9B58E]">
+                      <Wallet className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                      <span className="truncate">Sistem Manajemen Aset &amp; Tagihan Sewa</span>
                     </div>
-                    <div className="mt-1 font-serif text-xl font-bold text-white">
+                    <div className="mt-1 font-serif text-lg sm:text-xl font-bold text-white break-words">
                       HAZENOR Properties — Tangerang
                     </div>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-[#C9B58E]/20 text-[#C9B58E] border border-[#C9B58E]/40">
+                  <span className="self-start sm:self-auto inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-[#C9B58E]/20 text-[#C9B58E] border border-[#C9B58E]/40 shrink-0">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#C9B58E]" />
                     Multi-Organisasi
                   </span>
                 </div>
 
                 {/* Recent Payment & Invoice Activity List */}
-                <div className="space-y-2.5">
+                <div className="space-y-2 sm:space-y-2.5">
                   <div className="flex items-center justify-between text-xs font-semibold opacity-75">
                     <span>Modul Operasional Terintegrasi</span>
                     <span>Status Sistem</span>
                   </div>
 
                   <div
-                    className={`rounded-lg border p-3 flex items-center justify-between text-xs ${
+                    className={`rounded-lg border p-2.5 sm:p-3 flex items-center justify-between gap-2 text-xs ${
                       isDark
                         ? "border-[#C9B58E]/20 bg-[#0F1E28]/60"
                         : "border-[#EAE5DB] bg-[#F6F4EF]/70"
                     }`}
                   >
-                    <div>
-                      <div className="font-semibold">
+                    <div className="min-w-0 pr-1">
+                      <div className="font-semibold text-[11px] sm:text-xs leading-snug">
                         Manajemen Properti, Unit, Kontrak &amp; Invoice PDF
                       </div>
-                      <div className="opacity-70 mt-0.5">
+                      <div className="opacity-70 mt-0.5 text-[10px] sm:text-[11px] truncate">
                         Isolasi Data Penuh Antar-Akun Pengelola
                       </div>
                     </div>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    <span className="shrink-0 inline-flex items-center gap-1 px-2 sm:px-2.5 py-0.5 rounded-full font-semibold text-[10px] sm:text-xs bg-emerald-50 text-emerald-800 border border-emerald-200">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-600" />
                       Aktif
                     </span>
                   </div>
 
                   <div
-                    className={`rounded-lg border p-3 flex items-center justify-between text-xs ${
+                    className={`rounded-lg border p-2.5 sm:p-3 flex items-center justify-between gap-2 text-xs ${
                       isDark
                         ? "border-[#C9B58E]/20 bg-[#0F1E28]/60"
                         : "border-[#EAE5DB] bg-[#F6F4EF]/70"
                     }`}
                   >
-                    <div>
-                      <div className="font-semibold">
+                    <div className="min-w-0 pr-1">
+                      <div className="font-semibold text-[11px] sm:text-xs leading-snug">
                         Verifikasi Pembayaran &amp; Notifikasi WhatsApp Resmi
                       </div>
-                      <div className="opacity-70 mt-0.5 flex items-center gap-1">
-                        <Clock className="h-3 w-3" aria-hidden="true" />
-                        <span>hazenor.id@gmail.com &bull; +62 882 9510 7590</span>
+                      <div className="opacity-70 mt-0.5 flex items-center gap-1 text-[10px] sm:text-[11px] truncate">
+                        <Clock className="h-3 w-3 shrink-0" aria-hidden="true" />
+                        <span className="truncate">hazenor.id@gmail.com &bull; +62 882 9510 7590</span>
                       </div>
                     </div>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    <span className="shrink-0 inline-flex items-center gap-1 px-2 sm:px-2.5 py-0.5 rounded-full font-semibold text-[10px] sm:text-xs bg-emerald-50 text-emerald-800 border border-emerald-200">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-600" />
                       Siap Pakai
                     </span>

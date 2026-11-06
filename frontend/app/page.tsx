@@ -154,18 +154,19 @@ export default function LandingPage() {
     >
       {/* Top Corporate Bar — HAZENOR Properties */}
       <div className="bg-[#172B38] text-[#EAE5DB] border-b border-[#C9B58E]/20 text-[11px]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold tracking-[0.18em] uppercase text-[#C9B58E]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 sm:h-9 flex items-center justify-between gap-2 overflow-hidden">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="font-semibold tracking-[0.16em] sm:tracking-[0.18em] uppercase text-[#C9B58E] text-[10px] sm:text-[11px] truncate">
               HAZENOR Properties
             </span>
             <span className="hidden sm:inline text-[#EAE5DB]/40">|</span>
-            <span className="hidden sm:inline font-serif italic text-xs text-[#EAE5DB]/85">
+            <span className="hidden md:inline font-serif italic text-xs text-[#EAE5DB]/85">
               A Legacy Built on Trust.
             </span>
           </div>
-          <div className="text-[#EAE5DB]/75">
-            Platform Digital: <strong className="text-white">HAZENOR Properties</strong>
+          <div className="text-[#EAE5DB]/75 text-[10px] sm:text-[11px] shrink-0">
+            <span className="hidden sm:inline">Platform Digital: </span>
+            <strong className="text-white">Portal Properti</strong>
           </div>
         </div>
       </div>
@@ -178,9 +179,9 @@ export default function LandingPage() {
             : "bg-white/95 border-[#EAE5DB]"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-8">
-            <Link href="/" className="group">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 sm:gap-4">
+          <div className="flex items-center gap-4 lg:gap-8 min-w-0">
+            <Link href="/" className="group min-w-0">
               <HazenorLogo
                 variant="product"
                 theme={isDark ? "dark" : "light"}
@@ -213,12 +214,12 @@ export default function LandingPage() {
             </nav>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             <button
               type="button"
               onClick={() => setIsDark((prev) => !prev)}
               aria-label={isDark ? "Aktifkan tampilan terang" : "Aktifkan tampilan gelap"}
-              className={`p-2 rounded-lg border text-xs font-medium transition-all duration-200 ${
+              className={`p-1.5 sm:p-2 rounded-lg border text-xs font-medium transition-all duration-200 shrink-0 ${
                 isDark
                   ? "border-[#C9B58E]/30 bg-[#0F1E28] text-[#C9B58E] hover:text-white"
                   : "border-[#EAE5DB] bg-[#F6F4EF] text-[#172B38] hover:bg-[#EAE5DB]"
@@ -229,7 +230,7 @@ export default function LandingPage() {
 
             <Link
               href="/login"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition ${
+              className={`px-2.5 sm:px-3.5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-lg transition shrink-0 ${
                 isDark
                   ? "text-[#EAE5DB] hover:bg-[#0F1E28]"
                   : "text-[#172B38] hover:bg-[#EAE5DB]/60"
@@ -239,9 +240,10 @@ export default function LandingPage() {
             </Link>
             <Link
               href="/register"
-              className="px-4 py-2 text-sm font-semibold rounded-lg bg-[#172B38] hover:bg-[#213B4D] text-[#EAE5DB] border border-[#C9B58E]/40 shadow-xs transition-all duration-200"
+              className="px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg bg-[#172B38] hover:bg-[#213B4D] text-[#EAE5DB] border border-[#C9B58E]/40 shadow-xs transition-all duration-200 shrink-0"
             >
-              Daftar sebagai Pemilik
+              <span className="sm:hidden">Daftar</span>
+              <span className="hidden sm:inline">Daftar sebagai Pemilik</span>
             </Link>
           </div>
         </div>
